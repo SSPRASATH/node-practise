@@ -1,0 +1,16 @@
+var expect = require('expect');
+
+var {generateMessage} = require('./message');
+
+describe('generateMessage',()=>{
+    it('should generate correct message object',()=>{
+        var from ='john';
+        var text ='new messagr';
+        var message = generateMessage(from,text);
+
+        expect(typeof message.createdAt).toBe('number');
+        expect(message).toMatchObject({from,text});
+    });
+});
+
+/* toIclude is decprecated and toBeA also so use typeof with toBe and toMatchObject */
