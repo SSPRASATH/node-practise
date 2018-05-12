@@ -9,11 +9,18 @@ socket.on('disconnect', function () {
 });
 
 socket.on('newMessage', function (message) {
-  console.log('newMessage', message);
-  var li = jQuery('<li></li>');
+  var template =jQuery('#message-template').html();
+  var html = Mustache.render(template,{
+    text: message.text,
+    from: message.from
+  });
+
+  jQuery('#messages').append(html);
+
+ /*  var li = jQuery('<li></li>');
   li.text(`${message.from}: ${message.text}`);
   
-  jQuery('#messages').append(li);
+  jQuery('#messages').append(li); */
 });
  
 jQuery('#message-form').on('submit', function(e){
