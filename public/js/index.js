@@ -23,6 +23,7 @@ jQuery('#message-form').on('submit', function(e){
         from:'user',
         text:jQuery('[name=message]').val()
     },function(){
-      messageTextbox.val('')
+      text:jQuery('[name=message]').val('')
+
     })
 })

@@ -5,16 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>node-chat-app</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <p>Welcome to the Chat app</p>
+<body class="chat">
+    <div class="chat__sidebar">
+        <h3>People</h3>
+        <div id="users"></div>
+        </div>
+    <div class="chat__main">
 
-    <ol id="messages"></ol>
+    <ol id="messages" class="chat__messages"></ol>
 
-    <form id ="message-form" action="">
-        <input type="text" name="message" placeholder="message"/>
-        <button>send</button>
+    <div class="chat__footer">
+        <form id ="message-form" action="">
+            <input type="text" name="message" placeholder="message" autocomplete="off"/>
+            <button>send</button>
+        
+    </div>
     </form>
+
+    </div>
+    </div>
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
